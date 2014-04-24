@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceDefinition name="AzureWorkerNancySample" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-10.2.2">
-  <WorkerRole name="AzureWorkerNancySample.WorkerRole" vmsize="Small">
+  <WorkerRole name="AzureWorkerNancySample.WorkerRole" vmsize="ExtraSmall">
     <Imports>
       <Import moduleName="Diagnostics" />
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
     </Imports>
+    <Endpoints>
+      <InputEndpoint name="Http" protocol="http" port="80" localPort="80" />
+    </Endpoints>
   </WorkerRole>
 </ServiceDefinition>
